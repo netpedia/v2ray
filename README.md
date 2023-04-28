@@ -16,7 +16,7 @@ config.json
   "inbounds": [
     {
       "port": 10086,
-      "listen":"127.0.0.1",
+      "listen":"0.0.0.0",
       "protocol": "vmess",
       "settings": {
         "clients": [
