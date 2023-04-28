@@ -84,6 +84,7 @@ server {
 
 Download client : https://github.com/v2fly/v2ray-core/releases
 
+edit json
 ```json
 {
   "inbounds": [
@@ -128,4 +129,9 @@ Download client : https://github.com/v2fly/v2ray-core/releases
     }
   ]
 }
+```
+
+enter CMD type 
+```sh
+v2ray.exe run
 ```
