@@ -135,3 +135,7 @@ enter CMD type
 ```sh
 v2ray.exe run
 ```
+
+Setup SOCKS 5 Proxy in your browser
+
+![image](https://user-images.githubusercontent.com/11188109/235120455-bef7c819-21e1-4867-ad0d-289731e94a97.png)
