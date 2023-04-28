@@ -1,6 +1,7 @@
 # v2ray
 ## V2Ray Server Installation
 
+### V2Ray in Docker
 ```sh
 docker run -d --net iteungwebnet --ip 172.18.0.39 --name v2ray -v /home/docker/v2ray:/etc/v2fly -p 10086:10086 v2fly/v2fly-core run -c /etc/v2fly/config.json
 ```
@@ -50,8 +51,8 @@ docker ps -a | grep v2ray
 docker restart v2ray
 docker logs v2ray
 ```
+### Nginx setup
 
-nginx config
 ```sh
 server {
   listen 80;
@@ -80,10 +81,21 @@ server {
 }
 ```
 
-Setup BBR if slow speed
+### BBR For Slow Speed
+In Docker Host and Nginx Host
 
 ```sh
 wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+or
+
+```sh
+echo "net.core.default_qdisc=fq" | sudo tee -a /etc/sysctl.d/60-custom.conf
+
+echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.d/60-custom.conf
+
+sudo sysctl -p /etc/sysctl.d/60-custom.conf
+
 ```
 
 ## V2Ray Client
