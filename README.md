@@ -80,6 +80,12 @@ server {
 }
 ```
 
+Setup BBR if slow speed
+
+```sh
+wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+```
+
 ## V2Ray Client
 
 Download client : https://github.com/v2fly/v2ray-core/releases
