@@ -43,13 +43,14 @@ config.json
   ]
 }
 ```
-setup time zone and
-restart docker
-cek logs
+
+Docker Command List
+
 ```sh
 docker ps -a | grep v2ray
 docker restart v2ray
 docker logs v2ray
+docker exec -ti v2ray sh
 ```
 ### Nginx setup
 
