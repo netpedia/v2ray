@@ -1,5 +1,5 @@
 # v2ray
-V2Ray Installation
+## V2Ray Server Installation
 
 ```sh
 docker run -d --net iteungwebnet --ip 172.18.0.39 --name v2ray -v /home/docker/v2ray:/etc/v2fly -p 10086:10086 v2fly/v2fly-core run -c /etc/v2fly/config.json
@@ -77,5 +77,55 @@ server {
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
+}
+```
+
+## V2Ray Client
+
+Download client : https://github.com/v2fly/v2ray-core/releases
+
+```json
+{
+  "inbounds": [
+    {
+      "port": 1090,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "example.com",
+            "port": 443,
+            "users": [
+              {
+                "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+                "alterId": 0
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "wsSettings": {
+          "path": "/ray"
+        }
+      }
+    }
+  ]
 }
 ```
