@@ -101,6 +101,9 @@ sudo sysctl -p /etc/sysctl.d/60-custom.conf
 
 ## V2Ray Client
 
+## Nekoray
+Download : https://github.com/MatsuriDayo/nekoray
+
 ## Qv2ray
 Download V2Ray core : https://github.com/v2fly/v2ray-core/releases
 Download Qv2ray : https://github.com/Qv2ray/Qv2ray
