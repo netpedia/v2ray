@@ -101,9 +101,11 @@ sudo sysctl -p /etc/sysctl.d/60-custom.conf
 
 ## V2Ray Client
 
-Download client : https://github.com/v2fly/v2ray-core/releases
+## Qv2ray
+Download V2Ray core : https://github.com/v2fly/v2ray-core/releases
+Download Qv2ray : https://github.com/Qv2ray/Qv2ray
 
-edit json
+Create config.json
 ```json
 {
   "inbounds": [
@@ -150,6 +152,7 @@ edit json
 }
 ```
 
+## Raw V2Ray
 enter CMD type 
 ```sh
 v2ray.exe run
